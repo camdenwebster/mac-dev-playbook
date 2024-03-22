@@ -16,9 +16,17 @@ mkdir ~/config
 # echo "Creating dir at ~/config/mac-dev-playbook/roles"
 # mkdir ~/config/mac-dev-playbook/roles
 
-# Clone mac-dev-playbook repo into the config directory (using HTTPS)
+# Clone or pull mac-dev-playbook repo into the config directory (using HTTPS)
 cd ~/config/
-git clone https://github.com/camdenwebster/mac-dev-playbook.git
+if [ -d ~/config/mac-dev-playbook/.git]
+then
+  cd ~/config/mac-dev-playbook/
+  git pull
+else
+  git clone https://github.com/camdenwebster/mac-dev-playbook.git
+fi
+
+
 
 # Install Ansible
 pip3 install ansible
