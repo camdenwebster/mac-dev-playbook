@@ -2,126 +2,103 @@
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
-configure_terminal: true
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
-configure_dock: false
-dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
-dockitems_persist: []
-# - name: "Sublime Text"
-#   path: "/Applications/Sublime Text.app/"
-#   pos: 5
+configure_dock: true
+dockitems_remove:
+ - Maps
+ - Photos
+ - FaceTime
+ - Contacts
+ - Freeform
+ - TV
+ - News
+ - Keynote
+ - Numbers
+ - Pages
+ - 'App Store'
 
-configure_sudoers: false
-sudoers_custom_config: ''
-# Example:
-# sudoers_custom_config: |
-#   # Allow users in admin group to use sudo with no password.
-#   %admin ALL=(ALL) NOPASSWD: ALL
+dockitems_persist:
+ - name: "Obsidian"
+   path: "/Applications/Obsidian.app/"
+   pos: 4
+ - name: "Visual Studio Code"
+   path: "/Applications/Visual Studio Code.app/"
+   pos: 5
+ - name: "Slack"
+   path: "/Applications/Slack.app/"
+   pos: 6
+ - name: "Suspicious Package"
+   path: "/Applications/Suspicious Package.app/"
+   pos: 7
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+configure_sudoers: true
+sudoers_custom_config: |
+  # Allow users in admin group to use sudo with no password.
+  %admin ALL=(ALL) NOPASSWD: ALL
+
+dotfiles_repo: https://github.com/camdenwebster/dotfiles.git
+dotfiles_repo_version: main
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/config/dotfiles
 dotfiles_files:
-  - .zshrc
-  - .gitignore
-  - .inputrc
   - .osx
-  - .vimrc
+  - .gitconfig
+  - .zshrc
+  - .gitignore_global
+  - .zprofile
+  - .obsidian
+  - .vscode
+  - .nextcloud
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
-  - autoconf
-  - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
+  - bitwarden-cli
+  - carthage
   - git
   - gh
-  - go
-  - gpg
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - nmap
-  - node
-  - nvm
-  - php
-  - ssh-copy-id
-  - cowsay
-  - readline
   - openssl
-  - pv
-  - wget
-  - wrk
-  - zsh-history-substring-search
+  - ssh-copy-id
+  - tart
 
 homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
-  - docker
-  - dropbox
-  - firefox
+  - bitwarden
+  - figma
+  - github
   - google-chrome
-  - handbrake
-  - licecap
-  - sequel-ace
+  - hiddenbar
+  - home-assistant
+  - microsoft-remote-desktop
+  - mist
+  - nextcloud
+  - obsidian
+  - proxyman
+  - raycast
+  - reader
+  - shottr
   - slack
-  - sublime-text
-  - transmit
+  - sqlpro-for-sqlite
+  - suspicious-package
+  - tailscale
+  - utm
+  - visual-studio-code
+  - zoom
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_app_ids:
+ # Xcode
+ - 497799835
+ # InYourFace
+ - 1476964367
+
 mas_email: ""
 mas_password: ""
 
 osx_script: "~/.osx --no-restart"
-
-# Install packages from other package managers.
-# Note: You are responsible for making sure the required package managers are
-# installed, eg. through homebrew.
-composer_packages: []
-# - name: drush
-#   state: present # present/absent, default: present
-#   version: "^8.1" # default: N/A
-gem_packages: []
-# - name: bundler
-#   state: present # present/absent/latest, default: present
-#   version: "~> 1.15.1" # default: N/A
-npm_packages: []
-# - name: webpack
-#   state: present # present/absent/latest, default: present
-#   version: "^2.6" # default: N/A
-pip_packages: []
-# - name: mkdocs
-#   state: present # present/absent/latest, default: present
-#   version: "0.16.3" # default: N/A
-
-# Set to 'true' to configure Sublime Text.
-configure_sublime: false
-sublime_base_path: '~/Library/Application Support/Sublime Text'
-sublime_config_path: "Packages/User"
-sublime_package_control:
-  - "DocBlockr"
-  - "Dockerfile Syntax Highlighting"
-  - "FileDiffs"
-  - "GitHub Flavored Markdown Preview"
-  - "Jinja2"
-  - "Package Control"
-  - "PHP-Twig"
-  - "Pretty JSON"
-  - "SublimeLinter"
-  - "SublimeLinter-contrib-yamllint"
-  - "TrailingSpaces"
-  - "WordCount"
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
