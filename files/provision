@@ -3,6 +3,9 @@
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# Add user-level Python to PATH
+export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
+
 # Create a config directory in the home folder
 mkdir ~/config
 

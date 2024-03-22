@@ -30,6 +30,8 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - Sign in
     - Raycast:
       - Double click backup file, input password
+      - Disable Spotlight keyboard shortcut for Command+Spacebar
+      - Configure Raycast for keyboard shotcut Command+Spacebar
     - Safari:
       - View > Show Status Bar
       - Preferences > Advanced > "Show full website address"
