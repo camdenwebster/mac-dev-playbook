@@ -89,16 +89,16 @@ homebrew_cask_apps:
   - zoom
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_app_ids:
- # Xcode
- - 497799835
- # InYourFace
- - 1476964367
+mas_installed_apps:
+  - {id: 497799835, name: "Xcode"}
+  - {id: 1476964367, name: "InYourFace"}
 
 mas_email: ""
 mas_password: ""
 
 osx_script: "~/.osx --no-restart"
+
+jamf_tasks: false
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
