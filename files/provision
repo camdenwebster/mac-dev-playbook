@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Create a config directory in the home folder
+mkdir ~/config
+
+# Clone mac-dev-playbook repo into the config directory (using HTTPS)
+git clone https://github.com/camdenwebster/mac-dev-playbook.git ~/config
+
+# Install Ansible
+pip3 install ansible
+
+# Download mac-dev-playbook requirements
+ansible-galaxy install -r ~/config/mac-dev-playbook/requirements.yml
+
+# Run Ansible playbook
+ansible-playbook ~/config/mac-dev-playbook/main.yml --ask-become-pass
