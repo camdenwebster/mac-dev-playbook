@@ -7,7 +7,9 @@
 export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
 
 # Create a config directory in the home folder
+echo "Creating dir at ~/config"
 mkdir ~/config
+echo "Creating dir at ~/config/mac-dev-playbook"
 mkdir ~/config/mac-dev-playbook
 
 # Clone mac-dev-playbook repo into the config directory (using HTTPS)
