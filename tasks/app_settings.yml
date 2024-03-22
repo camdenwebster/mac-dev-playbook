@@ -1,37 +1,37 @@
 ---
 # Copy app settings into their necessary directories after installation is complete
 - name: Obsidian settings exists
-    stat:
-        path: ~/Library/Application\ Support/obsidian/obsidian.json
-    register: obsidian_settings
+  stat:
+    path: ~/Library/Application\ Support/obsidian/obsidian.json
+  register: obsidian_settings
 
 - name: Nexcloud settings exists
-    stat:
-        path: ~/Library/Preferences/Nextcloud/nextcloud.cfg
-    register: nextcloud_settings
+  stat:
+    path: ~/Library/Preferences/Nextcloud/nextcloud.cfg
+  register: nextcloud_settings
 
 - name: VSCode settings exists
-    stat:
-      path: ~/Library/Application\ Support/Code/User/settings.json
-    register: vscode_settings
+  stat:
+    path: ~/Library/Application\ Support/Code/User/settings.json
+  register: vscode_settings
 
 - name: Copy Obsidian settings (selecting default vault)
-    copy:
-        src: ~/.obsidian/obsidian.json
-        dest: ~/Library/Application\ Support/obsidian/obsidian.json
-    changed_when: false
-    when: not obsidian_settings.exists
+  copy:
+    src: ~/.obsidian/obsidian.json
+    dest: ~/Library/Application\ Support/obsidian/obsidian.json
+  changed_when: false
+  when: not obsidian_settings.exists
 
 - name: Copy Nextcloud settings
-    copy:
-        src: ~/.nextcloud/Nextcloud
-        dest: ~/Library/Preferences/
-    changed_when: false
-    when: not nextcloud_settings.exists
+  copy:
+    src: ~/.nextcloud/Nextcloud
+    dest: ~/Library/Preferences/
+  changed_when: false
+  when: not nextcloud_settings.exists
 
 - name: Copy VSCode settings
-    copy:
-        src: ~/.vscode/settings.json
-        dest: ~/Library/Application\ Support/Code/User/settings.json
-    changed_when: false
-    when: not vscode_settings.exists
+  copy:
+    src: ~/.vscode/settings.json
+    dest: ~/Library/Application\ Support/Code/User/settings.json
+  changed_when: false
+  when: not vscode_settings.exists

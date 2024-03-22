@@ -18,7 +18,7 @@ mkdir ~/config
 
 # Clone or pull mac-dev-playbook repo into the config directory (using HTTPS)
 cd ~/config/
-if [ -d ~/config/mac-dev-playbook/.git]
+if [ -d "~/config/mac-dev-playbook/.git"]
 then
   cd ~/config/mac-dev-playbook/
   git pull
