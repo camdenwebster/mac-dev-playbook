@@ -10,7 +10,7 @@ export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
 mkdir ~/config
 
 # Clone mac-dev-playbook repo into the config directory (using HTTPS)
-git clone https://github.com/camdenwebster/mac-dev-playbook.git ~/config
+git clone https://github.com/camdenwebster/mac-dev-playbook.git ~/config/
 
 # Install Ansible
 pip3 install ansible
