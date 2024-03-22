@@ -1,5 +1,4 @@
 # Copy app settings into their necessary directories after installation is complete
-
 - name: Obsidian settings exists
     stat:
         path: ~/Library/Application\ Support/obsidian/obsidian.json

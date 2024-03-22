@@ -35,6 +35,14 @@
       when: configure_osx
       tags: ['osx']
 
+    - import_tasks: tasks/app_settings.yml
+      when: configure_apps
+      tags: ['app_settings']
+
+    - import_tasks: tasks/jamf_tasks.yml
+      when: jamf_tasks
+      tags: ['jamf_tasks']
+
     - name: Run post-provision task files in a block.
       tags: ['post']
       block:
