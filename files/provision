@@ -7,8 +7,7 @@
 export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
 
 # Create config directory in the home folder
-if [ -d "~/config/"]
-then
+if [ -d ~/config/ ]; then
   cd ~/config/
 else
   echo "Creating dir at ~/config"
@@ -18,8 +17,7 @@ else
 fi
 
 # Clone or pull mac-dev-playbook repo into the config directory (using HTTPS)
-if [ -d "~/config/mac-dev-playbook/.git"]
-then
+if [ -d ~/config/mac-dev-playbook/.git ]; then
   cd ~/config/mac-dev-playbook/
   git pull
 else
