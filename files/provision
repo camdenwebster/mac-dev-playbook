@@ -13,6 +13,8 @@ then
 else
   echo "Creating dir at ~/config"
   mkdir ~/config
+  cd ~/config/
+
 fi
 
 # Clone or pull mac-dev-playbook repo into the config directory (using HTTPS)
