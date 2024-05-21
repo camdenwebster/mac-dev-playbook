@@ -3,7 +3,8 @@ downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
 configure_osx: true
-configure_apps: true
+configure_apps: false
+personal_tasks: true
 jamf_tasks: false
 
 # Set to 'true' to configure the Dock via dockutil.
@@ -59,6 +60,7 @@ homebrew_installed_packages:
   - bitwarden-cli
   - carthage
   - git
+  - git-lfs
   - gh
   - openssl
   - ssh-copy-id
@@ -68,11 +70,9 @@ homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - bitwarden
   - figma
   - github
   - google-chrome
-  - hiddenbar
   - home-assistant
   - microsoft-remote-desktop
   - mist
@@ -81,6 +81,8 @@ homebrew_cask_apps:
   - proxyman
   - raycast
   - reader
+  - setapp
+  - sf-symbols
   - shottr
   - slack
   - sqlpro-for-sqlite
@@ -94,6 +96,10 @@ homebrew_cask_apps:
 mas_installed_apps:
   - {id: 497799835, name: "Xcode"}
   - {id: 1476964367, name: "InYourFace"}
+  - {id: 302584613, name: "Kindle"}
+  - {id: 417375580, name: "BetterSnapTool"}
+  - {id: 1352778147, name: "Bitwarden"}
+  - {id: 1291898086, name: "Toggl Track"}
 
 mas_email: ""
 mas_password: ""

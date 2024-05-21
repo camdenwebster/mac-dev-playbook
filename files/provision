@@ -7,17 +7,15 @@
 export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
 
 # Create config directory in the home folder
-echo "Creating dir at ~/config"
-mkdir ~/config
-
-# echo "Creating dir at ~/config/mac-dev-playbook"
-# mkdir ~/config/mac-dev-playbook
-
-# echo "Creating dir at ~/config/mac-dev-playbook/roles"
-# mkdir ~/config/mac-dev-playbook/roles
+if [ -d "~/config/"]
+then
+  cd ~/config/
+else
+  echo "Creating dir at ~/config"
+  mkdir ~/config
+fi
 
 # Clone or pull mac-dev-playbook repo into the config directory (using HTTPS)
-cd ~/config/
 if [ -d "~/config/mac-dev-playbook/.git"]
 then
   cd ~/config/mac-dev-playbook/
@@ -25,8 +23,6 @@ then
 else
   git clone https://github.com/camdenwebster/mac-dev-playbook.git
 fi
-
-
 
 # Install Ansible
 pip3 install ansible
