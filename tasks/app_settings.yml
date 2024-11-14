@@ -15,6 +15,11 @@
     path: ~/Library/Application\ Support/Code/User/settings.json
   register: vscode_settings
 
+- name: Zed settings exists
+  stat:
+    path: ~/.config/zed/settings.json
+  register: zed_settings
+
 - name: Copy Obsidian settings (selecting default vault)
   copy:
     src: ~/.obsidian/obsidian.json
@@ -35,3 +40,10 @@
     dest: ~/Library/Application\ Support/Code/User/settings.json
   changed_when: false
   when: not vscode_settings.exists
+
+- name: Copy Zed settings
+  copy:
+    src: ~/.zed/settings.json
+    dest: ~/.config/zed/settings.json
+  changed_when: false
+  when: not zed_settings.exists
