@@ -70,26 +70,33 @@ homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - arc
+  - apparency
+  - discord
   - figma
   - github
   - google-chrome
+  - google-drive
   - home-assistant
-  - microsoft-remote-desktop
+  - loom
   - mist
   - nextcloud
   - obsidian
   - proxyman
   - raycast
   - reader
-  - setapp
   - sf-symbols
   - shottr
   - slack
-  - sqlpro-for-sqlite
+  - sqlitestudio
   - suspicious-package
   - tailscale
+  - tart
   - utm
   - visual-studio-code
+  - windows-app
+  - yt-music
+  - zed
   - zoom
 
 # See `geerlingguy.mas` role documentation for usage instructions.
