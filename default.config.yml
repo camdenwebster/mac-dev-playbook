@@ -71,6 +71,7 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - arc
   - apparency
+  - cap
   - discord
   - figma
   - ghostty
@@ -79,7 +80,7 @@ homebrew_cask_apps:
   - google-chrome
   - google-drive
   - home-assistant
-  - loom
+  - leader-key
   - microsoft-outlook
   - mist
   - nextcloud
