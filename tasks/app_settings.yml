@@ -25,25 +25,25 @@
     src: ~/.obsidian/obsidian.json
     dest: ~/Library/Application\ Support/obsidian/obsidian.json
   changed_when: false
-  when: not obsidian_settings.exists
+  when: not obsidian_settings.stat.exists
 
 - name: Copy Nextcloud settings
   copy:
     src: ~/.nextcloud/Nextcloud
     dest: ~/Library/Preferences/
   changed_when: false
-  when: not nextcloud_settings.exists
+  when: not nextcloud_settings.stat.exists
 
 - name: Copy VSCode settings
   copy:
     src: ~/.vscode/settings.json
     dest: ~/Library/Application\ Support/Code/User/settings.json
   changed_when: false
-  when: not vscode_settings.exists
+  when: not vscode_settings.stat.exists
 
 - name: Copy Zed settings
   copy:
     src: ~/.zed/settings.json
     dest: ~/.config/zed/settings.json
   changed_when: false
-  when: not zed_settings.exists
+  when: not zed_settings.stat.exists

@@ -3,7 +3,7 @@ downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
 configure_osx: true
-configure_apps: false
+configure_apps: true
 personal_tasks: true
 jamf_tasks: false
 
@@ -57,12 +57,13 @@ dotfiles_files:
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
-  - bitwarden-cli
   - carthage
+  - fastlane
   - git
   - git-lfs
   - gh
   - openssl
+  - pyenv
   - ssh-copy-id
   - tart
 
@@ -74,11 +75,14 @@ homebrew_cask_apps:
   - apparency
   - discord
   - figma
+  - ghostty
   - github
+  - github-copilot-for-xcode
   - google-chrome
   - google-drive
   - home-assistant
   - loom
+  - microsoft-outlook
   - mist
   - nextcloud
   - obsidian
@@ -91,22 +95,19 @@ homebrew_cask_apps:
   - sqlitestudio
   - suspicious-package
   - tailscale
-  - tart
-  - utm
   - visual-studio-code
+  - vlc
   - windows-app
-  - yt-music
-  - zed
+  - xcodes
   - zoom
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
-  - {id: 497799835, name: "Xcode"}
   - {id: 1476964367, name: "InYourFace"}
+  - {id: 6444602274, name: "Ivory"}
   - {id: 302584613, name: "Kindle"}
-  - {id: 417375580, name: "BetterSnapTool"}
-  - {id: 1352778147, name: "Bitwarden"}
   - {id: 1291898086, name: "Toggl Track"}
+  - {id: 1575220747, name: "Bakery"}
 
 mas_email: ""
 mas_password: ""
