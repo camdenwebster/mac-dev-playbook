@@ -1,14 +1,5 @@
 ---
 # Copy app settings into their necessary directories after installation is complete
-- name: Obsidian settings exists
-  stat:
-    path: ~/Library/Application\ Support/obsidian/obsidian.json
-  register: obsidian_settings
-
-- name: Nexcloud settings exists
-  stat:
-    path: ~/Library/Preferences/Nextcloud/nextcloud.cfg
-  register: nextcloud_settings
 
 - name: VSCode settings exists
   stat:
@@ -19,20 +10,6 @@
   stat:
     path: ~/.config/zed/settings.json
   register: zed_settings
-
-- name: Copy Obsidian settings (selecting default vault)
-  copy:
-    src: ~/.obsidian/obsidian.json
-    dest: ~/Library/Application\ Support/obsidian/obsidian.json
-  changed_when: false
-  when: not obsidian_settings.stat.exists
-
-- name: Copy Nextcloud settings
-  copy:
-    src: ~/.nextcloud/Nextcloud
-    dest: ~/Library/Preferences/
-  changed_when: false
-  when: not nextcloud_settings.stat.exists
 
 - name: Copy VSCode settings
   copy:

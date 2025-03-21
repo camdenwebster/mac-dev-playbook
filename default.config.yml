@@ -51,9 +51,7 @@ dotfiles_files:
   - .zshrc
   - .gitignore_global
   - .zprofile
-  - .obsidian
   - .vscode
-  - .nextcloud
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
